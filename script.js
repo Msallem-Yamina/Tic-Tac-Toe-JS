@@ -7,7 +7,7 @@ squares.forEach ((el)=>{
        Game(e);
        winner();
     });
-})
+});
 function Game(e){
     // Test if the box is empty or not and the value of Turn to put and replace X and O.
     if (e.target.innerHTML === '' && turn == 'X'){
@@ -28,6 +28,7 @@ function End(n1,n2,n3){
     document.getElementById('item'+n1).style.background = '#000';
     document.getElementById('item'+n2).style.background = '#000';
     document.getElementById('item'+n3).style.background = '#000';
+    document.getElementById('success').play();
     // Add ... to title and reload the page
     let i = 0,
     inter = setInterval(() => {
@@ -62,5 +63,11 @@ function winner (){
         End(2,5,8);
     }else if (arr[1] == arr[4] && arr[4] == arr[7] && arr[7] !== ''){
         End(1,4,7);
-    };
+    }else if(document.querySelectorAll('.square.clicked').length === 9){
+        document.getElementById('fail').play();
+        title.innerHTML = 'Game Over!';
+        setTimeout(() => {
+            document.location.reload();
+        }, 3000);
+    }
 }
