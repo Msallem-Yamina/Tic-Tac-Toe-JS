@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+main {
+    width: 255px;
+    margin: 50px auto;
+    text-align: center;
+    color: white;
+}
+main header {
+    padding: 5px 0;
+    margin-bottom: 10px;
+    background: #f889d5;
+    font-size: 25px;
+}
+header span {
+    color: #00ffe7;
+}
+main section{
+    background: #f889d5;
+    display: grid;
+    grid-template-columns: repeat(3,calc(100% / 3));
+}
+.square {
+    list-style: none;
+    border: 3px solid white;
+    cursor: pointer;
+    height: 80px;
+    font-size: 50px;
+    line-height: 80px;
+}
+.square:hover {
+    background: #000;
+}
+.square.clicked {
+    pointer-events: none;
+}
